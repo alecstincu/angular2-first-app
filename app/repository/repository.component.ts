@@ -1,6 +1,7 @@
 import { Component,Input } from '@angular/core';
+import {Router} from '@angular/router';
 
-import {RepoEntity} from './repo-entity.component';
+import {RepositoryEntity} from './repository-entity.component';
 
 @Component({
     moduleId: module.id,
@@ -10,5 +11,13 @@ import {RepoEntity} from './repo-entity.component';
 
 export class RepositoryComponent{
     @Input()
-    repository : RepoEntity;
+    repository : RepositoryEntity;
+
+    constructor(private router:Router) {}
+
+    goToCommits(repository : RepositoryEntity){
+        let link = '/repos/'+ repository.owner.login + '/' + repository.name +  '/commits';
+        console.log(link);
+        this.router.navigateByUrl(link);
+    }
 }

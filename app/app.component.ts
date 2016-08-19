@@ -1,35 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import {HTTP_PROVIDERS} from '@angular/http';
-import 'rxjs/Rx';
-import {Observable} from 'rxjs/Rx';
+import {Component} from '@angular/core';
 
-import {RepoEntity} from './repository/repo-entity.component';
-import {RepoService} from './repository/repo.service';
-import {RepositoryComponent} from './repository/repository.component';
+import {RepositoryListComponent} from "./repositories/repository-list.component";
 
 @Component({
   moduleId: module.id,
-  selector: 'repo-list',
+  selector: 'my-app',
   templateUrl: 'app.component.html',
-  directives: [RepositoryComponent],
-  providers: [HTTP_PROVIDERS, RepoService]
+  directives: [RepositoryListComponent]
 })
-export class AppComponent implements OnInit{
-
-    repositories: Array<RepoEntity>;
-
-    constructor(private repoService: RepoService){}
-
-    ngOnInit(){
-    this.repoService.getRepositories()
-      .subscribe(
-          (repositories) => {
-              //console.log(repositories);
-              this.repositories = repositories;
-          },
-          (err) => {
-            console.log(err);
-          }
-      )
-    }
-}
+export class AppComponent {}

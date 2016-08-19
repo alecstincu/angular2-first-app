@@ -9,33 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var http_1 = require('@angular/http');
-require('rxjs/Rx');
-var repo_service_1 = require('./repository/repo.service');
-var repository_component_1 = require('./repository/repository.component');
+var repository_list_component_1 = require("./repositories/repository-list.component");
 var AppComponent = (function () {
-    function AppComponent(repoService) {
-        this.repoService = repoService;
+    function AppComponent() {
     }
-    AppComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.repoService.getRepositories()
-            .subscribe(function (repositories) {
-            //console.log(repositories);
-            _this.repositories = repositories;
-        }, function (err) {
-            console.log(err);
-        });
-    };
     AppComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'repo-list',
+            selector: 'my-app',
             templateUrl: 'app.component.html',
-            directives: [repository_component_1.RepositoryComponent],
-            providers: [http_1.HTTP_PROVIDERS, repo_service_1.RepoService]
+            directives: [repository_list_component_1.RepositoryListComponent]
         }), 
-        __metadata('design:paramtypes', [repo_service_1.RepoService])
+        __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;
 }());

@@ -2,10 +2,11 @@ import { Injectable } from '@angular/core';
 import {Http, Response} from '@angular/http';
 import {Observable} from 'rxjs/Rx'
 
-import {RepoEntity} from './repo-entity.component';
+import {RepositoryEntity} from '../repository/repository-entity.component';
+import {OwnerEntity} from "../repository/owner-entity.component";
 
 @Injectable()
-export class RepoService{
+export class RepositoryService{
 
     constructor(private http : Http){}
 
@@ -14,11 +15,13 @@ export class RepoService{
             .map((response : Response) => {
                 return response.json();
             })
-            .map((repositories:Array<RepoEntity>) => {
-                let result : Array<RepoEntity> = [];
+            .map((repositories:Array<RepositoryEntity>) => {
+                let result : Array<RepositoryEntity> = [];
                 if (repositories){
                     repositories.forEach((repo) => {
-                        result.push(new RepoEntity(repo.id, repo.name));
+                        let owner = new OwnerEntity(repo.owner.login);
+                        //console.log(owner);
+                        result.push(new RepositoryEntity(repo.id, repo.name, owner));
                     });
                 }
                 return result;
