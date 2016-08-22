@@ -1,1 +1,7 @@
-<h1>Hello commit page</h1>
+<ul *ngFor="let commit of commits">
+    <li>
+        <div>Name: {{commit.author.name}}</div>
+        <div>Email: {{commit.author.email}}</div>
+        <div>Message: {{commit.message}}</div>
+    </li>
+</ul>

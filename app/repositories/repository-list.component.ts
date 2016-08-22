@@ -4,7 +4,7 @@ import {HTTP_PROVIDERS} from '@angular/http';
 import 'rxjs/Rx';
 import {Observable} from 'rxjs/Rx';
 
-import {RepositoryEntity} from '../repository/repository-entity.component';
+import {RepositoryEntity} from '../entities/repository-entity.component';
 import {RepositoryComponent} from '../repository/repository.component';
 import {RepositoryService} from "./repository.service";
 
@@ -15,6 +15,7 @@ import {RepositoryService} from "./repository.service";
     directives: [RepositoryComponent],
     providers: [HTTP_PROVIDERS, RepositoryService]
 })
+
 export class RepositoryListComponent implements OnInit{
 
     repositories: Array<RepositoryEntity>;

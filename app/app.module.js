@@ -12,6 +12,8 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var app_routing_1 = require('./app.routing');
 var app_component_1 = require('./app.component');
+var commits_component_1 = require("./commits/commits.component");
+var repository_list_component_1 = require("./repositories/repository-list.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -22,7 +24,9 @@ var AppModule = (function () {
                 app_routing_1.routing
             ],
             declarations: [
-                app_component_1.AppComponent
+                app_component_1.AppComponent,
+                repository_list_component_1.RepositoryListComponent,
+                commits_component_1.CommitsComponent
             ],
             bootstrap: [
                 app_component_1.AppComponent
