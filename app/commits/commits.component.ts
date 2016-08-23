@@ -42,4 +42,8 @@ export class CommitsComponent {
             }
         });
     }
+
+    goBack(){
+        window.history.back();
+    }
 }

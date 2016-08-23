@@ -4,6 +4,7 @@ import {routing} from './app.routing';
 import { AppComponent }  from './app.component';
 import {CommitsComponent} from "./commits/commits.component";
 import {RepositoryListComponent} from "./repositories/repository-list.component";
+import {FirstLetterUpperCasePipe} from "./first-letter-uppercase.pipe";
 
 @NgModule({
   imports:[
@@ -13,7 +14,8 @@ import {RepositoryListComponent} from "./repositories/repository-list.component"
   declarations: [
       AppComponent,
       RepositoryListComponent,
-      CommitsComponent
+      CommitsComponent,
+      FirstLetterUpperCasePipe
   ],
   bootstrap: [
       AppComponent

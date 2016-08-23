@@ -1,4 +1,4 @@
-import { Component,Input } from '@angular/core';
+import { Component,Input,OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 
 import {RepositoryEntity} from '../entities/repository-entity';
@@ -9,9 +9,13 @@ import {RepositoryEntity} from '../entities/repository-entity';
     templateUrl: 'repository.component.html'
 })
 
-export class RepositoryComponent{
+export class RepositoryComponent implements OnInit{
     @Input()
     repository : RepositoryEntity;
+
+    ngOnInit(){
+       //console.log(this.repository);
+    }
 
     constructor(private router:Router) {}
 

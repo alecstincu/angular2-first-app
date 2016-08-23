@@ -1,6 +1,11 @@
-<div *ngIf="repository">
-    <span>{{repository.id}}</span>
-    -
-    <span>{{repository.name}}</span>
-    <button class="btn-default" (click)="goToCommits(repository)">See Commits</button>
+<div class="col-md-2">
+    <div class="thumbnail">
+        <img src="{{repository.owner.avatar_url}}">
+        <div class="caption">
+            <h5><a href="{{repository.url}}">{{repository.full_name | slice: "0" : "15"}}...</a></h5>
+            <p>
+                <button class="btn btn-primary btn-sm" (click)="goToCommits(repository)">Go To Commits</button>
+            </p>
+        </div>
+    </div>
 </div>

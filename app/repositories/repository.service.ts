@@ -19,9 +19,10 @@ export class RepositoryService{
                 let result : Array<RepositoryEntity> = [];
                 if (repositories){
                     repositories.forEach((repo) => {
-                        let owner = new OwnerEntity(repo.owner.login);
+                        //console.log(repo.owner);
+                        let owner = new OwnerEntity(repo.owner.login, repo.owner.avatar_url);
                         //console.log(owner);
-                        result.push(new RepositoryEntity(repo.id, repo.name, owner));
+                        result.push(new RepositoryEntity(repo.id, repo.name, repo.full_name, repo.url, owner));
                     });
                 }
                 return result;
