@@ -2,11 +2,11 @@ import { Injectable } from '@angular/core';
 import {Http, Response} from '@angular/http';
 import {Observable} from 'rxjs/Rx'
 
-import {RepositoryEntity} from '../entities/repository-entity.component';
-import {OwnerEntity} from "../entities/owner-entity.component";
-import {CommiterEntity} from "../entities/commiter-entity.component";
-import {Author} from "../entities/author.component";
-import {CommitsEntity} from "../entities/commits-entity.component";
+import {RepositoryEntity} from '../entities/repository-entity';
+import {OwnerEntity} from "../entities/owner-entity";
+import {CommiterEntity} from "../entities/commiter-entity";
+import {Author} from "../entities/author";
+import {CommitEntity} from "../entities/commit-entity";
 
 @Injectable()
 export class CommitsService{
@@ -20,7 +20,7 @@ export class CommitsService{
             .map((response : Response) => {
                 return response.json();
             })
-            .map((commits:Array<CommitsEntity>) => {
+            .map((commits:Array<CommitEntity>) => {
                 let result : Array<CommiterEntity> = [];
                 if (commits){
                     commits.forEach((commitFromList) => {

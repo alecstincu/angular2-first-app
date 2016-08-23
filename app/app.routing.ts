@@ -10,6 +10,11 @@ const appRoutes: Routes = [
     {
         path: 'repos/:owner/:repo/commits',
         component: CommitsComponent
+    },
+    {
+        path: '',
+        redirectTo: '/repos',
+        pathMatch: 'full'
     }
 ];
 

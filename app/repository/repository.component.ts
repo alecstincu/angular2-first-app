@@ -1,7 +1,7 @@
 import { Component,Input } from '@angular/core';
 import {Router} from '@angular/router';
 
-import {RepositoryEntity} from '../entities/repository-entity.component';
+import {RepositoryEntity} from '../entities/repository-entity';
 
 @Component({
     moduleId: module.id,

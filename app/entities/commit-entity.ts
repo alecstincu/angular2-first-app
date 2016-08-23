@@ -1,6 +1,6 @@
-import {CommiterEntity} from "./commiter-entity.component";
+import {CommiterEntity} from "./commiter-entity";
 
-export class CommitsEntity{
+export class CommitEntity{
     commit : CommiterEntity;
 
     constructor(commit : CommiterEntity){

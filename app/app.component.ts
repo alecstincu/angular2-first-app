@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {HTTP_PROVIDERS} from '@angular/http';
 
 import {RepositoryListComponent} from "./repositories/repository-list.component";
 
@@ -6,6 +7,7 @@ import {RepositoryListComponent} from "./repositories/repository-list.component"
   moduleId: module.id,
   selector: 'my-app',
   templateUrl: 'app.component.html',
-  directives: [RepositoryListComponent]
+  directives: [RepositoryListComponent],
+  providers: [HTTP_PROVIDERS]
 })
 export class AppComponent {}

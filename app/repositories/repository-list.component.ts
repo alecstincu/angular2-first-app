@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {HTTP_PROVIDERS} from '@angular/http';
 
 import 'rxjs/Rx';
 import {Observable} from 'rxjs/Rx';
 
-import {RepositoryEntity} from '../entities/repository-entity.component';
+import {RepositoryEntity} from '../entities/repository-entity';
 import {RepositoryComponent} from '../repository/repository.component';
 import {RepositoryService} from "./repository.service";
 
@@ -13,7 +12,7 @@ import {RepositoryService} from "./repository.service";
     selector: 'repository-list',
     templateUrl: 'repository-list.component.html',
     directives: [RepositoryComponent],
-    providers: [HTTP_PROVIDERS, RepositoryService]
+    providers: [RepositoryService]
 })
 
 export class RepositoryListComponent implements OnInit{

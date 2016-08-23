@@ -1,4 +1,4 @@
-import {Author} from './author.component';
+import {Author} from './author';
 
 export class CommiterEntity{
     author: Author;

@@ -1,4 +1,4 @@
-import {OwnerEntity} from "./owner-entity.component";
+import {OwnerEntity} from "./owner-entity";
 
 export class RepositoryEntity{
     id: number;

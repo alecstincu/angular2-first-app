@@ -1,15 +1,14 @@
 import {Component} from '@angular/core';
 import {CommitsService} from "./commits.service";
-import {HTTP_PROVIDERS} from '@angular/http';
 import {ActivatedRoute, Params} from '@angular/router';
 
-import {CommiterEntity} from "../entities/commiter-entity.component";
+import {CommiterEntity} from "../entities/commiter-entity";
 
 @Component({
     moduleId: module.id,
     selector: 'commit-list',
     templateUrl: 'commits.component.html',
-    providers: [HTTP_PROVIDERS, CommitsService]
+    providers: [CommitsService]
 })
 
 export class CommitsComponent {
